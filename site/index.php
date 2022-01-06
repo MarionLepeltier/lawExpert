@@ -581,6 +581,11 @@
                         
                         <?php
                       $form->createInput('Nom', 'form-input', "request-form-name");
+                      if (isset($_POST['Nom'])){
+                        echo "Bienvenue "." ".$_POST['Nom'];
+                      } else {
+                          echo "Merci de remplir les informations";
+                      }
                       ?>
                       </form>
                     </div>
@@ -591,8 +596,14 @@
                         <!-- <input class="form-input" id="request-form-phone" type="text" name="phone" data-constraints="@Numeric @Required"> -->
                         <label class="form-label" for="request-form-phone">Phone</label>
                         <?php
-                      $form->createInput('Prénom', 'form-input',"request-form-phone" );
-                      ?>
+                        $form->createInput('Phone', 'form-input',"request-form-phone" );
+
+                        if (isset($_POST['Phone'])){
+                          echo "Votre numero est "." ".$_POST['Phone'];
+                        } else {
+                            echo "Merci de remplir les informations";
+                        }
+                        ?>
 
                       </form>
                     </div>
@@ -602,9 +613,17 @@
 
                         <!-- <input class="form-input" id="request-form-email" type="email" name="email" data-constraints="@Email @Required"> -->
                         <label class="form-label" for="request-form-email">Email</label>
+                      
                         <?php
-                      $form->createInput('Telephone', 'form-input',"request-form-email" );
-                      ?>
+                        $form->createInput('Email', 'form-input',"request-form-email" );
+              
+
+                        if (isset($_POST['Email'])){
+                            echo "Votre email est "." ".$_POST['Email'];
+                        } else {
+                            echo "Merci de remplir les informations";
+                        }
+                        ?>
 
                       </form>
                     </div>
@@ -648,18 +667,6 @@
             </div>
           </div>
         </div>
-
-        <?php
-
-          if (isset($_POST['Nom']) && isset($_POST['Prénom'])  && isset($_POST['Telephone'])){
-              echo "Bienvenue "." ".$_POST['Nom']." ".$_POST['Prénom'];
-          } else {
-              echo "Merci de remplir les informations";
-          }
-
-          // echo (isset($_POST['Nom']) && isset($_POST['Prénom'])) ? "Bienvenue "." ".$_POST['Nom']." ".$_POST['Prénom'] :  "Merci de remplir les informations"
-
-          ?>
 
       </form>
 
