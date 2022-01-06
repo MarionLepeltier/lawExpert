@@ -4,7 +4,7 @@
     /**
      * Form
      * 
-     * Voici ma classe Form nananana
+     * Voici ma classe Form
      */
     class Form {
         
@@ -31,14 +31,14 @@
             
         }
 
-        public function createInput($key, $class) {
+        public function createInput($key, $class, $id) {
             // echo '<label for='. $key . '>'. $key .' : </label>';
-            echo '<input type="text" name="' . $key . '" value="'. $this->getValue($key).'"> '; 
+            echo '<input type="text" name="' . $key . '" class="'.$class.'" id="'.$id.'"value="'. $this->getValue($key).'"> '; 
 
         }
 
-        public function createSubmit($text) {
-            echo '<button type="submit">'.$text.'</button>';
+        public function createSubmit($text, $class) {
+            echo '<button type="submit" " class="'.$class.'">'.$text.'</button>';
         }
     }
 
